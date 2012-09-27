@@ -1,18 +1,16 @@
-function calendar(){
-    //Variables to be used later.  Place holders right now.
+function calendar(inp_month,inp_year){
     var padding ="";
     var totalFeb ="";
     var i = 1;
     var testing="";
     
     var current = new Date();
-    var month = current.getMonth();
+    var month = inp_month-1;
     var day = current.getDate();
-    var year = current.getFullYear();
-    var tempMonth = month+1; //+1; //Used to match up the current month with the correct start date.
+    var year = inp_year;
+    var tempMonth = month+1; 
     var prevMonth = month -1;
     
-    //Determing if Feb has 28 or 29 days in it.  
     if (month == 1){
 	if ( (year%100!=0) && (year%4==0) || (year%400==0)){
 	    totalFeb = 29;
